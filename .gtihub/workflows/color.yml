@@ -1,0 +1,25 @@
+# test github actions file that prints a color
+name: Color Logger
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  log-color:
+    name: Log Color
+    runs-on: ubuntu-latest
+
+    steps:
+
+    # checkout your files - think cloning 
+    - uses: actions/checkout@v4
+
+    # choose color
+    - name: Set selected color
+      run: echo '::set-output name=SELECTED_COLOR::green'
+      id: color-selected
+
+    # Log Color
+    - name: Get selected color
+      run: echo "The selected color is ${{ steps.color-selector.outputs.SELECTED_COLOR }}"
