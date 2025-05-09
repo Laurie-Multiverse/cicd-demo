@@ -18,7 +18,7 @@ jobs:
     # choose color
     - name: Set selected color
       run: echo '::set-output name=SELECTED_COLOR::green'
-      id: color-selected
+      id: color-selector
 
     # Log Color
     - name: Get selected color
